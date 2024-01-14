@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kapcsolat{% endblock %}
+
+{% block body %}
+    <h1>Köszönjük, hogy írt nekünk. Hamarosan felveszük önnel a kapcsolatot!</h1>
+
+    <a class="btn btn-dark" href="{{ path('app_message_new') }}">Vissza a kapcsolat oldalra</a>
+
+{% endblock %}

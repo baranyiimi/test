@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Felhasználók{% endblock %}
+
+{% block body %}
+    <h1 class="p-3">Felhasználók</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Felhasználónév</th>
+                <th>Opciók</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>
+                    <a class="btn btn-dark" href="{{ path('app_user_show', {'id': user.id}) }}">Megnyitás</a>
+                    <a class="btn btn-dark" href="{{ path('app_user_edit', {'id': user.id}) }}">Módosítás</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Nem találtunk felhasználókat!/td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </table>
+      <div class="pagination">
+        {{ knp_pagination_render(users) }}
+    </div>
+
+    <a class="btn btn-dark" href="{{ path('app_user_new') }}">Új létrehozása</a>
+{% endblock %}

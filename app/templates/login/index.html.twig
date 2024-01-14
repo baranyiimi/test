@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+<div class="container">
+    <form action="{{ path('app_login') }}" method="post">
+     <div>
+        <label for="username">Felhasználónév:</label>
+        </div>
+        <div>
+        <input type="text" id="username" name="_username" value="{{ last_username }}">
+ </div>
+        <div>
+        <label for="password">Jelszó:</label>
+         </div>
+        <div>
+        <input type="password" id="password" name="_password">
+ </div>
+        <div>
+
+<input type="hidden" name="_target_path" value="/message">
+ </div>
+        <div>
+        <button class="btn btn-success" type="submit">Bejelentkezés</button>
+         </div>
+    
+    </form>
+    </div>
+{% endblock %}

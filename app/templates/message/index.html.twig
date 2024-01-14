@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Üzenetek{% endblock %}
+
+{% block body %}
+    <h1 class="p-3">Üzenetek</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Név</th>
+                <th>Email Cím</th>
+                <th>Üzenet</th>
+                <th>Opciók</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for message in messages %}
+            <tr>
+                <td>{{ message.id }}</td>
+                <td>{{ message.Name }}</td>
+                <td>{{ message.emailAddress }}</td>
+                <td>{{ message.message }}</td>
+                <td>
+                    <a class="btn btn-dark" href="{{ path('app_message_show', {'id': message.id}) }}">Megnyitás</a>
+                    <a class="btn btn-dark" href="{{ path('app_message_edit', {'id': message.id}) }}">Módosítás</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Nincsennek még üzenetek!</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+      <div class="pagination">
+        {{ knp_pagination_render(messages) }}
+    </div>
+
+    <a class="btn btn-dark" href="{{ path('app_message_new') }}">Új létrehozása</a>
+{% endblock %}
