@@ -21,7 +21,7 @@ final class Version20240114122455 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE `user` (id INT AUTO_INCREMENT NOT NULL, username VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649F85E0677 (username), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql("INSERT INTO `user` (`id`, `username`, `roles`, `password`) VALUES (NULL, 'admin', '[]', '$2y$13$Xon8gGxfpzTsXkXtCf68nOJUpW1Agtxiz0vlf8PLDnIvvk.5Zw7Xi')");
+        $this->addSql('INSERT INTO `user` (`id`, `username`, `roles`, `password`) VALUES (NULL, `admin`, `[]`, `$2y$13$Xon8gGxfpzTsXkXtCf68nOJUpW1Agtxiz0vlf8PLDnIvvk.5Zw7Xi`)');
         $this->addSql('DROP TABLE `admin`');
     }
 
