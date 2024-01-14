@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Message{% endblock %}
+{% block title %}Edit Message
+{% endblock %}
 
 {% block body %}
-    <h1>Üzenet módosítása</h1>
+	<h1>Üzenet módosítása</h1>
 
-    {{ include('message/_form.html.twig', {'button_label': 'Mentés'}) }}
+	{{ include('message/_form.html.twig', {'button_label': 'Mentés'}) }}
 
-    <a class="btn btn-dark" href="{{ path('app_message_index') }}">Vissza a listához</a>
+	<a class="btn btn-dark" href="{{ path('app_message_index') }}">Vissza a listához</a>
 
-    {{ include('message/_delete_form.html.twig') }}
+	{{ include('message/_delete_form.html.twig') }}
 {% endblock %}

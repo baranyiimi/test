@@ -15,10 +15,9 @@ class MessageDTOType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('name', TextType::class, ['label' => 'Név'])
-        ->add('email', EmailType::class, ['label' => 'Email cím'])
-        ->add('message', TextType::class, ['label' => 'Üzenet'])
-        ;
+            ->add('name', TextType::class, ['label' => 'Név'])
+            ->add('email', EmailType::class, ['label' => 'Email cím'])
+            ->add('message', TextType::class, ['label' => 'Üzenet']);
     }
 
     public function configureOptions(OptionsResolver $resolver)

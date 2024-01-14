@@ -15,10 +15,9 @@ class LoginFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('username', TextType::class, ['label' => 'Felhasználónév'])
-        ->add('password', PasswordType::class, ['label' => 'Jelszó'])
-        ->add('login', SubmitType::class, ['label' => 'Bejelentkezés'])
-        ;
+            ->add('username', TextType::class, ['label' => 'Felhasználónév'])
+            ->add('password', PasswordType::class, ['label' => 'Jelszó'])
+            ->add('login', SubmitType::class, ['label' => 'Bejelentkezés']);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
